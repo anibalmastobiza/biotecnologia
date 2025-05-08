@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Implicaciones Sociales de la Biotecnología - Curso universitario sobre bioética, dilemas éticos en biotecnología y sus impactos sociales">
+    <meta name="author" content="Aníbal M. Astobiza">
+    <meta name="keywords" content="biotecnología, bioética, ética, universidad, granada, CRISPR, transgénicos, clonación">
+    
+    <title>Implicaciones Sociales de la Biotecnología | Aníbal M. Astobiza</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0MzM4Y2EiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1taWNyb3Njb3BlIj48cGF0aCBkPSJNNiAyMmg0TTEyIDE0djIiPjwvcGF0aD48cGF0aCBkPSJNOS41IDE3LjVhMi41IDIuNSAwIDEgMCAxLTQuNzgiPjwvcGF0aD48cGF0aCBkPSJNMTMuNSAxNy40MWEyLjUgMi41IDAgMSAwIDEtNC43MyI+PC9wYXRoPjxwYXRoIGQ9Ik0xOCA4YzAtNi02LTYtNi02Uy02IDItNiA4YzcuNSAwIDQgOS41IDkgOC41YzctMSA0LTguNSA5LTguNVoiPjwvcGF0aD48cGF0aCBkPSJNMTYgMmE1IDcgMCAwIDEtNCAxMiI+PC9wYXRoPjwvc3ZnPg==">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js para interactividad -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS - Animate On Scroll Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --primary-light: #EEF2FF;
+            --text-primary: #1F2937;
+            --text-secondary: #4B5563;
+            --accent: #8B5CF6;
+            --background: #F9FAFB;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Navbar */
+        .navbar {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        /* Sección de Contenido */
+        .section-card {
+            border-radius: 1rem;
+            background-color: var(--white);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-header {
+            border-radius: 0.5rem 0.5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 80%, rgba(41, 84, 255, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%);
+            opacity: 0.9;
+        }
+        
+        .section-icon {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Badges */
+        .badge {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.35em 0.65em;
+            border-radius: 9999px;
+            font-size: 0.75em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .badge:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* List items */
+        .custom-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        .custom-list li::before {
+            content: "\f058"; /* FontAwesome checkmark */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background-color: var(--primary-dark);
+        }
+        
+        /* Animaciones */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Tabla de evaluación */
+        .evaluation-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .evaluation-table th {
+            background-color: var(--primary-dark);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem;
+        }
+        
+        .evaluation-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .evaluation-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .evaluation-table tr:nth-child(even) {
+            background-color: var(--primary-light);
+        }
+        
+        /* Timeline para el temario */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container.left {
+            left: 0;
+        }
+        
+        .timeline-container.right {
+            left: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-container.left::after {
+            right: -12px;
+        }
+        
+        .timeline-container.right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Responsive design para dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 19px;
+            }
+            
+            .timeline-container.right {
+                left: 0%;
+            }
+        }
+        
+        /* Dark mode toggle */
+        .dark-mode {
+            background-color: #1F2937;
+            color: #F9FAFB;
+        }
+        
+        .dark-mode .navbar.scrolled {
+            background-color: rgba(31, 41, 55, 0.9);
+        }
+        
+        .dark-mode .section-card {
+            background-color: #374151;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark-mode .badge {
+            background-color: #4B5563;
+            color: #E5E7EB;
+        }
+        
+        .dark-mode .evaluation-table th {
+            background-color: #1F2937;
+        }
+        
+        .dark-mode .evaluation-table td {
+            border-bottom: 1px solid #4B5563;
+        }
+        
+        .dark-mode .evaluation-table tr:nth-child(even) {
+            background-color: #374151;
+        }
+        
+        .dark-mode .timeline-content {
+            background-color: #374151;
+        }
+        
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #374151;
+        }
+    </style>
+</head>
+
+<body x-data="{ mobileMenuOpen: false, darkMode: false, backToTopVisible: false }" :class="darkMode ? 'dark-mode' : ''">
+    <!-- Back to top button -->
+    <button @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            class="back-to-top"
+            :class="{'visible': backToTopVisible}"
+            aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar fixed w-full z-50 transition-all duration-300" x-data="{ scrolled: false }" 
+         @scroll.window="scrolled = (window.pageYOffset > 20)">
+        <div class="container mx-auto px-4 py-3" :class="{'py-4': !scrolled, 'py-2': scrolled}">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center text-white">
+                    <i class="fas fa-dna mr-2 text-2xl"></i>
+                    <span class="font-bold text-xl">Biotecnología y Sociedad</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#descripcion" class="text-white hover:text-indigo-200 transition">Descripción</a>
+                    <a href="#competencias" class="text-white hover:text-indigo-200 transition">Competencias</a>
+                    <a href="#objetivos" class="text-white hover:text-indigo-200 transition">Objetivos</a>
+                    <a href="#temario" class="text-white hover:text-indigo-200 transition">Temario</a>
+                    <a href="#evaluacion" class="text-white hover:text-indigo-200 transition">Evaluación</a>
+                </div>
+                
+                <div class="flex items-center">
+                    <!-- Dark mode toggle -->
+                    <button @click="darkMode = !darkMode" class="text-white p-2 rounded-full hover:bg-indigo-700 transition mr-4">
+                        <i class="fas" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                        <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" 
+                 x-transition:enter-start="opacity-0 -translate-y-4" 
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 translate-y-0" 
+                 x-transition:leave-end="opacity-0 -translate-y-4"
+                 class="md:hidden pt-4 pb-2">
+                <div class="flex flex-col space-y-3">
+                    <a href="#descripcion" @click="mobileMenuOpen = false" class="text-white hover:text-indigo-200 transition py-2 px-4 hover:bg-indigo-800 rounded">Descripción</a>
+                    <a href="#competencias" @click="mobileMenuOpen = false" class="text-white hover:text-indigo-200 transition py-2 px-4 hover:bg-indigo-800 rounded">Competencias</a>
+                    <a href="#objetivos" @click="mobileMenuOpen = false" class="text-white hover:text-indigo-200 transition py-2 px-4 hover:bg-indigo-800 rounded">Objetivos</a>
+                    <a href="#temario" @click="mobileMenuOpen = false" class="text-white hover:text-indigo-200 transition py-2 px-4 hover:bg-indigo-800 rounded">Temario</a>
+                    <a href="#evaluacion" @click="mobileMenuOpen = false" class="text-white hover:text-indigo-200 transition py-2 px-4 hover:bg-indigo-800 rounded">Evaluación</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero min-h-screen flex items-center relative">
+        <div class="container mx-auto px-4 py-20 lg:py-32 z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 text-white text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-aos="fade-right" data-aos-delay="200">
+                        Implicaciones Sociales de la Biotecnología
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-4 text-indigo-100" data-aos="fade-right" data-aos-delay="400">
+                        Explorando los dilemas éticos en la frontera de la ciencia
+                    </p>
+                    <p class="text-lg mb-8 text-indigo-200" data-aos="fade-right" data-aos-delay="600">
+                        Prof. Aníbal M. Astobiza | Universidad de Granada
+                    </p>
+                    <div class="space-x-4" data-aos="fade-up" data-aos-delay="800">
+                        <a href="#descripcion" class="inline-block bg-white text-indigo-700 font-medium py-3 px-6 rounded-full hover:bg-indigo-100 transition shadow-lg transform hover:-translate-y-1">
+                            Explorar el curso
+                        </a>
+                        <a href="#temario" class="inline-block bg-transparent text-white border-2 border-white font-medium py-3 px-6 rounded-full hover:bg-white hover:text-indigo-700 transition shadow-lg transform hover:-translate-y-1">
+                            Ver temario
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center" data-aos="fade-left" data-aos-delay="600">
+                    <div class="relative float">
+                        <!-- SVG ilustrativo de biotecnología -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 200 200" class="w-full max-w-md">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="100" cy="100" r="90" fill="url(#grad1)" opacity="0.2" />
+                            <g fill="none" stroke="#ffffff" stroke-width="1.5">
+                                <!-- ADN helix structure -->
+                                <path d="M60,30 Q100,50 60,70 Q20,90 60,110 Q100,130 60,170" stroke-opacity="0.7" />
+                                <path d="M140,30 Q100,50 140,70 Q180,90 140,110 Q100,130 140,170" stroke-opacity="0.7" />
+                                <!-- Conexiones -->
+                                <line x1="60" y1="30" x2="140" y2="30" stroke-opacity="0.9" />
+                                <line x1="60" y1="70" x2="140" y2="70" stroke-opacity="0.9" />
+                                <line x1="60" y1="110" x2="140" y2="110" stroke-opacity="0.9" />
+                                <line x1="60" y1="170" x2="140" y2="170" stroke-opacity="0.9" />
+                                <!-- Células y moléculas -->
+                                <circle cx="100" cy="30" r="5" fill="#ffffff" stroke="none" />
+                                <circle cx="100" cy="70" r="5" fill="#ffffff" stroke="none" />
+                                <circle cx="100" cy="110" r="5" fill="#ffffff" stroke="none" />
+                                <circle cx="100" cy="170" r="5" fill="#ffffff" stroke="none" />
+                            </g>
+                            <circle cx="60" cy="30" r="3" fill="#ffffff" />
+                            <circle cx="140" cy="30" r="3" fill="#ffffff" />
+                            <circle cx="60" cy="70" r="3" fill="#ffffff" />
+                            <circle cx="140" cy="70" r="3" fill="#ffffff" />
+                            <circle cx="60" cy="110" r="3" fill="#ffffff" />
+                            <circle cx="140" cy="110" r="3" fill="#ffffff" />
+                            <circle cx="60" cy="170" r="3" fill="#ffffff" />
+                            <circle cx="140" cy="170" r="3" fill="#ffffff" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll down indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white text-center">
+                <p class="mb-2 text-sm font-light tracking-widest">DESCUBRE MÁS</p>
+                <a href="#descripcion" class="animate-bounce block">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 relative z-10">
+        <!-- Descripción del Curso -->
+        <section id="descripcion" class="mb-16" data-aos="fade-up">
+            <div class="section-card">
+                <div class="section-header bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+                    <div class="flex items-center section-icon">
+                        <i class="fas fa-book-open text-white text-3xl mr-4"></i>
+                        <h2 class="text-3xl font-bold text-white">Descripción del Curso</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Este curso ofrece una introducción a la Bioética y explora los dilemas éticos en distintos ámbitos de la Biotecnología, tales como las tecnologías genéticas y genómicas, tecnologías reproductivas y transgénesis. Se analizarán los impactos sociales y los conflictos planteados por las biotecnologías en el contexto actual.
+                    </p>
+                    
+                    <div class="mt-8 bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-3">Aspectos destacados</h3>
+                        <ul class="space-y-2 custom-list">
+                            <li>Análisis de dilemas éticos contemporáneos en biotecnología</li>
+                            <li>Estudio de casos prácticos y debates actuales</li>
+                            <li>Enfoque interdisciplinar: ética, biología, filosofía y derecho</li>
+                            <li>Desarrollo de pensamiento crítico y competencias argumentativas</li>
+                            <li>Participación en debates sobre temas controvertidos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-circle text-yellow-400 text-xl mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <span class="font-medium">Importante:</span> El curso se centrará en la <strong>Parte 1</strong> del temario teórico y práctico.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competencias -->
+        <section id="competencias" class="mb-16" data-aos="fade-up">
+            <div class="section-card">
+                <div class="section-header bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+                    <div class="flex items-center section-icon">
+                        <i class="fas fa-brain text-white text-3xl mr-4"></i>
+                        <h2 class="text-3xl font-bold text-white">Competencias</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-indigo-700 mb-4 flex items-center">
+                                <i class="fas fa-award text-indigo-500 mr-2"></i>
+                                Competencias Generales
+                            </h3>
+                            <ul class="space-y-3 custom-list">
+                                <li>
+                                    <span class="badge mr-2">CG06</span>
+                                    Correlacionar la modificación de organismos con beneficios en salud, medio ambiente y calidad de vida.
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-2xl font-semibold text-indigo-700 mt-8 mb-4 flex items-center">
+                                <i class="fas fa-microscope text-indigo-500 mr-2"></i>
+                                Competencias Específicas
+                            </h3>
+                            <ul class="space-y-3 custom-list">
+                                <li>
+                                    <span class="badge mr-2">CE34</span>
+                                    Identificar los valores éticos y sociales en conflicto en la aplicación de las biotecnologías.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CE35</span>
+                                    Razonar y debatir las posibles acciones alternativas ante casos de conflictos bioéticos.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CE36</span>
+                                    Participar y asesorar en comisiones de evaluación de impactos sociales de las biotecnologías.
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-semibold text-indigo-700 mb-4 flex items-center">
+                                <i class="fas fa-arrows-to-circle text-indigo-500 mr-2"></i>
+                                Competencias Transversales
+                            </h3>
+                            <ul class="space-y-3 custom-list">
+                                <li>
+                                    <span class="badge mr-2">CT01</span>
+                                    Capacidad de análisis y síntesis.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CT04</span>
+                                    Capacidad de comunicar de forma oral y escrita en las lenguas del Grado.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CT05</span>
+                                    Razonamiento crítico.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CT06</span>
+                                    Compromiso ético, con la igualdad de oportunidades, con la no discriminación y con la atención a la diversidad.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CT07</span>
+                                    Sensibilidad hacia temas medioambientales.
+                                </li>
+                                <li>
+                                    <span class="badge mr-2">CT09</span>
+                                    Capacidad de trabajar en equipo y en entornos multidisciplinares.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objetivos -->
+        <section id="objetivos" class="mb-16" data-aos="fade-up">
+            <div class="section-card">
+                <div class="section-header bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+                    <div class="flex items-center section-icon">
+                        <i class="fas fa-bullseye text-white text-3xl mr-4"></i>
+                        <h2 class="text-3xl font-bold text-white">Objetivos de Aprendizaje</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg border border-indigo-100 transition-all hover:shadow-lg">
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-4 flex items-center">
+                                <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                                Conocimientos
+                            </h3>
+                            <ul class="space-y-3 custom-list">
+                                <li>Conocer en profundidad algunos de los debates bioéticos con mayor impacto social suscitados por la biotecnología.</li>
+                                <li>Comprender los principales retos éticos, sociales y económicos que las biotecnologías plantean a la sociedad.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg border border-indigo-100 transition-all hover:shadow-lg">
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-4 flex items-center">
+                                <i class="fas fa-tools text-indigo-600 mr-2"></i>
+                                Habilidades
+                            </h3>
+                            <ul class="space-y-3 custom-list">
+                                <li>Identificar la diversidad y complejidad de los desacuerdos éticos suscitados por las biotecnologías, así como los elementos normativos que condicionan su análisis.</li>
+                                <li>Argumentar razonadamente sobre los distintos cursos de acción posibles desde el punto de vista ético y social en distintos contextos de aplicación de las biotecnologías.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg border border-blue-100">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                            <i class="fas fa-star text-blue-500 mr-2"></i>
+                            ¿Qué lograrás con este curso?
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="text-center mb-2">
+                                    <i class="fas fa-balance-scale text-3xl text-indigo-600"></i>
+                                </div>
+                                <p class="text-center text-gray-700">Capacidad para evaluar dilemas éticos en biotecnología</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="text-center mb-2">
+                                    <i class="fas fa-comments text-3xl text-indigo-600"></i>
+                                </div>
+                                <p class="text-center text-gray-700">Habilidades de argumentación en debates bioéticos</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="text-center mb-2">
+                                    <i class="fas fa-users text-3xl text-indigo-600"></i>
+                                </div>
+                                <p class="text-center text-gray-700">Sensibilidad hacia los impactos sociales de la biotecnología</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temario -->
+        <section id="temario" class="mb-16" data-aos="fade-up">
+            <div class="section-card">
+                <div class="section-header bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+                    <div class="flex items-center section-icon">
+                        <i class="fas fa-list-check text-white text-3xl mr-4"></i>
+                        <h2 class="text-3xl font-bold text-white">Programa de Contenidos</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-6 flex items-center">
+                            <i class="fas fa-book text-indigo-500 mr-2"></i>
+                            Temario Teórico - Parte 1
+                        </h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-container left" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <h4 class="text-xl font-semibold text-indigo-700 mb-2">Tema 1: De las implicaciones sociales al análisis bioético</h4>
+                                    <p class="text-gray-600 mb-3">
+                                        ¿Qué es la ética? Ética normativa y ética aplicada. Breve historia de la bioética. Conceptos fundamentales. Ética animal, ecológica y social.
+                                    </p>
+                                    <div class="mt-2">
+                                        <span class="badge">Dilemas morales</span>
+                                        <span class="badge">CRISPR</span>
+                                        <span class="badge">Genómica</span>
+                                        <span class="badge">OMG</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-container right" data-aos="fade-left">
+                                <div class="timeline-content">
+                                    <h4 class="text-xl font-semibold text-indigo-700 mb-2">Tema 2: Ética de la investigación biocientífica</h4>
+                                    <p class="text-gray-600 mb-3">
+                                        Breve historia de la ética de la investigación. Conceptos fundamentales. Protocolos de investigación biomédica. Comités de ética. Conflicto entre vidas: experimentación animal.
+                                    </p>
+                                    <div class="mt-2">
+                                        <span class="badge">Biohackers</span>
+                                        <span class="badge">Big Data</span>
+                                        <span class="badge">Biobancos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-container left" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <h4 class="text-xl font-semibold text-indigo-700 mb-2">Tema 3: Justicia distributiva y el valor social de los recursos biotecnológicos</h4>
+                                    <p class="text-gray-600 mb-3">
+                                        Breve introducción a las teorías de la justicia. Lo correcto y lo bueno. Normas mínimas exigibles. Principios, métricas y ámbitos de distribución.
+                                    </p>
+                                    <div class="mt-2">
+                                        <span class="badge">Justicia sanitaria</span>
+                                        <span class="badge">Bioeconomía</span>
+                                        <span class="badge">Biopatentes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-6 flex items-center">
+                            <i class="fas fa-flask text-indigo-500 mr-2"></i>
+                            Temario Práctico - Parte 1
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-100 rounded-full p-3 mr-4">
+                                        <i class="fas fa-baby text-indigo-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-semibold text-indigo-700 mb-2">Taller 1: ¿Qué bebés debemos traer al mundo?</h4>
+                                        <p class="text-gray-600">
+                                            Tecnologías de Reproducción Asistida y FIV. Edición genética y CRISPR. Selección de embriones. Genómica y epigenética.
+                                        </p>
+                                        <div class="mt-3 flex flex-wrap gap-2">
+                                            <span class="badge">Reproducción</span>
+                                            <span class="badge">Eugenesia</span>
+                                            <span class="badge">Mejora genética</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-100 rounded-full p-3 mr-4">
+                                        <i class="fas fa-paw text-indigo-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-semibold text-indigo-700 mb-2">Taller 2: Peces fluorescentes, clonación de mascotas y resucitando mamuts</h4>
+                                        <p class="text-gray-600">
+                                            Biotecnología y AMG. Transgénicos. Biología sintética. Clonación. Transespecismo. Ética animal.
+                                        </p>
+                                        <div class="mt-3 flex flex-wrap gap-2">
+                                            <span class="badge">Clonación</span>
+                                            <span class="badge">Transgénicos</span>
+                                            <span class="badge">Ética animal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-100 rounded-full p-3 mr-4">
+                                        <i class="fas fa-seedling text-indigo-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-semibold text-indigo-700 mb-2">Taller 3: ¿La comida del futuro ya está aquí? El desafío de 'Frankenfood'</h4>
+                                        <p class="text-gray-600">
+                                            Biotecnología y OMG. Cultivos y biotecnología. Implicaciones ambientales. Ecoética. Debate social sobre transgénicos.
+                                        </p>
+                                        <div class="mt-3 flex flex-wrap gap-2">
+                                            <span class="badge">OMG</span>
+                                            <span class="badge">Carne in vitro</span>
+                                            <span class="badge">Ecoética</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-100 rounded-full p-3 mr-4">
+                                        <i class="fas fa-microchip text-indigo-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-semibold text-indigo-700 mb-2">Taller 4: ¿Máquinas capaces de leer la mente?</h4>
+                                        <p class="text-gray-600">
+                                            Interfaces cerebro-ordenador. Privacidad. Seguridad. Cyborgización. Neuroética.
+                                        </p>
+                                        <div class="mt-3 flex flex-wrap gap-2">
+                                            <span class="badge">Neuroética</span>
+                                            <span class="badge">Interfaces cerebro-ordenador</span>
+                                            <span class="badge">Privacidad</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluación -->
+        <section id="evaluacion" class="mb-16" data-aos="fade-up">
+            <div class="section-card">
+                <div class="section-header bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+                    <div class="flex items-center section-icon">
+                        <i class="fas fa-chart-simple text-white text-3xl mr-4"></i>
+                        <h2 class="text-3xl font-bold text-white">Evaluación</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <p class="text-gray-700 mb-8 leading-relaxed">
+                        La evaluación de la Parte 1 de la asignatura se basará en el rendimiento durante el curso y un examen final.
+                    </p>
+                    
+                    <div class="md:flex md:space-x-8 mb-12">
+                        <div class="md:w-1/2 mb-8 md:mb-0">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 transform skew-y-3 rounded-2xl"></div>
+                                <div class="relative bg-white p-8 rounded-lg shadow-xl z-10">
+                                    <div class="flex items-center justify-between mb-6">
+                                        <h3 class="text-2xl font-bold text-indigo-700">Evaluación continua</h3>
+                                        <div class="text-3xl font-bold text-indigo-700">40%</div>
+                                    </div>
+                                    <ul class="space-y-4 custom-list">
+                                        <li>Realización de tareas obligatorias vinculadas a las prácticas (se valorará capacidad crítica y rigor argumentativo).</li>
+                                        <li>Participación activa en clase y debates.</li>
+                                        <li>Asistencia a actividades complementarias.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 transform -skew-y-3 rounded-2xl"></div>
+                                <div class="relative bg-white p-8 rounded-lg shadow-xl z-10">
+                                    <div class="flex items-center justify-between mb-6">
+                                        <h3 class="text-2xl font-bold text-indigo-700">Examen final</h3>
+                                        <div class="text-3xl font-bold text-indigo-700">60%</div>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">El examen final escrito constará de:</p>
+                                    <ul class="space-y-4 custom-list">
+                                        <li>Un ejercicio práctico: análisis ético de un problema práctico.</li>
+                                        <li>Desarrollo teórico: preguntas para demostrar comprensión y redacción.</li>
+                                        <li>Comentario crítico de un texto relacionado con la bioética.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg" role="alert">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-red-800">Importante</h3>
+                                <p class="mt-2 text-red-700">
+                                    Para aprobar la asignatura, se deberá obtener como mínimo una calificación de 4 sobre 10 en cada parte (Parte 1 y Parte 2). La calificación final será la media aritmética de ambas partes. Si una parte está superada (5 o más) y la otra no, la calificación de la parte superada se conserva para la Convocatoria Extraordinaria.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-indigo-50 rounded-lg">
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Criterios de evaluación detallados</h3>
+                        <table class="evaluation-table">
+                            <thead>
+                                <tr>
+                                    <th>Criterio</th>
+                                    <th>Descripción</th>
+                                    <th>Peso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rigor conceptual</td>
+                                    <td>Comprensión y uso adecuado de los conceptos bioéticos</td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>Capacidad argumentativa</td>
+                                    <td>Desarrollo coherente y fundamentado de las ideas</td>
+                                    <td>30%</td>
+                                </tr>
+                                <tr>
+                                    <td>Análisis crítico</td>
+                                    <td>Capacidad para evaluar dilemas desde múltiples perspectivas</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>Expresión escrita/oral</td>
+                                    <td>Claridad, coherencia y corrección</td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Participación</td>
+                                    <td>Contribución a la discusión en clase</td>
+                                    <td>10%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recursos -->
+        <section id="recursos" class="mb-16" data-aos="fade-up">
+            <div class="section-card">
+                <div class="section-header bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+                    <div class="flex items-center section-icon">
+                        <i class="fas fa-link text-white text-3xl mr-4"></i>
+                        <h2 class="text-3xl font-bold text-white">Recursos y Enlaces</h2>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-4">Plataforma Docente</h3>
+                            <p class="text-gray-600 mb-4">
+                                Toda la información actualizada, materiales adicionales y anuncios importantes sobre el desarrollo de la asignatura se publicarán en la plataforma <strong class="text-indigo-700">Prado-2</strong> de la UGR.
+                            </p>
+                            <div class="mt-6 flex justify-center">
+                                <a href="https://prado.ugr.es" target="_blank" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md transition transform hover:-translate-y-1">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Acceder a Prado-2
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-4">Bibliografía fundamental</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Casado, M. (Ed.) (2007). <em>Nuevos materiales de bioética y derecho</em>. Fontamara.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Beauchamp, T. L., & Childress, J. F. (2019). <em>Principles of biomedical ethics</em> (8th ed.). Oxford University Press.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Sandel, M. J. (2007). <em>The case against perfection: Ethics in the age of genetic engineering</em>. Harvard University Press.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Romeo Casabona, C. M. (2002). <em>Los genes y sus leyes. El derecho ante el genoma humano</em>. Comares.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
+                                <i class="fas fa-newspaper text-indigo-500 mr-2"></i>
+                                Revistas especializadas
+                            </h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>Bioethics</li>
+                                <li>Journal of Medical Ethics</li>
+                                <li>BMC Medical Ethics</li>
+                                <li>Cambridge Quarterly of Healthcare Ethics</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
+                                <i class="fas fa-globe text-indigo-500 mr-2"></i>
+                                Recursos web
+                            </h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>Observatorio de Bioética (UB)</li>
+                                <li>Nuffield Council on Bioethics</li>
+                                <li>UNESCO - Programa de Bioética</li>
+                                <li>Center for Genetics and Society</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3 flex items-center">
+                                <i class="fas fa-video text-indigo-500 mr-2"></i>
+                                Material audiovisual
+                            </h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>Documentales BBC Horizon sobre bioética</li>
+                                <li>Conferencias TED sobre biotecnología</li>
+                                <li>Podcasts de ética científica</li>
+                                <li>Películas y series recomendadas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA - Call to action -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/3 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-white mb-4">¿Tienes dudas sobre el curso?</h2>
+                        <p class="text-indigo-100 mb-6">
+                            No dudes en contactar con el profesor para resolver cualquier duda o solicitar más información sobre el contenido de la asignatura.
+                        </p>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="mailto:profesorbiotech@ugr.es" class="inline-flex justify-center items-center px-6 py-3 bg-white text-indigo-600 hover:bg-gray-100 font-semibold rounded-lg shadow transition transform hover:-translate-y-1">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Contactar por email
+                            </a>
+                            <a href="#descripcion" class="inline-flex justify-center items-center px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold rounded-lg transition transform hover:-translate-y-1">
+                                <i class="fas fa-arrow-up mr-2"></i>
+                                Volver al inicio
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 bg-white flex items-center justify-center">
+                        <div class="p-12 text-center">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0MzM4Y2EiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1taWNyb3Njb3BlIj48cGF0aCBkPSJNNiAyMmg0TTEyIDE0djIiPjwvcGF0aD48cGF0aCBkPSJNOS41IDE3LjVhMi41IDIuNSAwIDEgMCAxLTQuNzgiPjwvcGF0aD48cGF0aCBkPSJNMTMuNSAxNy40MWEyLjUgMi41IDAgMSAwIDEtNC43MyI+PC9wYXRoPjxwYXRoIGQ9Ik0xOCA4YzAtNi02LTYtNi02Uy02IDItNiA4YzcuNSAwIDQgOS41IDkgOC41YzctMSA0LTguNSA5LTguNVoiPjwvcGF0aD48cGF0aCBkPSJNMTYgMmE1IDcgMCAwIDEtNCAxMiI+PC9wYXRoPjwvc3ZnPg==" alt="Biotecnología" class="w-24 h-24 mx-auto mb-4">
+                            <p class="text-indigo-600 font-semibold">Universidad de Granada</p>
+                            <p class="text-gray-600">Facultad de Filosofía y Letras</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 relative z-10">
+        <div class="container mx-auto px-4 pt-12 pb-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Implicaciones Sociales de la Biotecnología</h3>
+                    <p class="mb-4">
+                        Curso universitario que explora los dilemas éticos en el ámbito de la biotecnología moderna y sus impactos sociales.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#descripcion" class="text-gray-400 hover:text-white transition">Descripción del curso</a></li>
+                        <li><a href="#competencias" class="text-gray-400 hover:text-white transition">Competencias</a></li>
+                        <li><a href="#objetivos" class="text-gray-400 hover:text-white transition">Objetivos</a></li>
+                        <li><a href="#temario" class="text-gray-400 hover:text-white transition">Temario</a></li>
+                        <li><a href="#evaluacion" class="text-gray-400 hover:text-white transition">Evaluación</a></li>
+                        <li><a href="#recursos" class="text-gray-400 hover:text-white transition">Recursos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contacto</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-indigo-400 mt-1 mr-3"></i>
+                            <span>Facultad de Filosofía y Letras<br>Universidad de Granada<br>Campus de Cartuja, 18071 Granada</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-indigo-400 mr-3"></i>
+                            <a href="mailto:profesorbiotech@ugr.es" class="hover:text-white transition">profesorbiotech@ugr.es</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-indigo-400 mr-3"></i>
+                            <span>+34 958 123 456</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p>&copy; <span id="currentYear"></span> Aníbal M. Astobiza - Universidad de Granada. Todos los derechos reservados.</p>
+                <p class="text-sm text-gray-500 mt-2">Página web diseñada para el curso "Implicaciones Sociales de la Biotecnología".</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Año actual en el footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Back to top button visibility
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    document.querySelector('.back-to-top').classList.add('visible');
+                } else {
+                    document.querySelector('.back-to-top').classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
